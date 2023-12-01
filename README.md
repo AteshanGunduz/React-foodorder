@@ -1,45 +1,28 @@
-# React Temeller
+# React Basics
 
-#### Dosya Yapısı
+File Structure:
+-.next After starting the project, this folder will be created to store the page cache and some features to speed up your .next project.
 
--.next
-Proje başlatıldıktan sonra, .nextprojenizi hızlandırmak için sayfa önbelleğini ve bazı özellikleri saklamak için bu klasörü oluşturulacaktır
+node_modules Contains all the dependencies required by the application. It also includes the main dependencies listed in package.json.
 
-- node_modules
-  Uygulamanın gerektirdiği tüm bağımlılıkları içerir. Ayrıca package.json'da listelenen ana bağımlılıklarda bulunur
+public -svg logos -favicon
 
-- public
-  -svg logolar
-  -favicon
+src All our work will be done here. src/index.js is the JavaScript entry point. -styles consists of our style files.
 
-- src
-  Bütün çalışmalarımızı burada yapacağız. src/index.js JavaScript giriş noktasıdır.
-  -styles, stil dosyalarımızdan oluşur
-- .gitignore
-  Kaynak denetiminin (Git) hangi dosyaları yoksayması gerektiğini belirtir
+.gitignore Specifies which files Git should ignore in source control.
 
-- package.json
-  Her Node.js projesinin bir package.json dosyası vardır ve bu, projemiz hakkında, örneğin bağımlılıklar ve script dosyaları listesi gibi bilgiler içerir.
+package.json Every Node.js project has a package.json file containing information about the project, such as dependencies and script files.
 
-- package-lock.json
-  Tüm bağımlılıkların anlık görüntüsü
+package-lock.json Snapshot of all dependencies.
 
--jsconfig.json
-Metin düzenleyicinize yardımcı olacak bir yapılandırma dosyasıdır.
+jsconfig.json A configuration file to assist your text editor.
 
--next.config.js
-Next.js'nin özel gelişmiş yapılandırması için kullanılır
+next.config.js Used for Next.js's custom advanced configuration.
 
-- README.md
-  Proje hakkında daha fazla bilgi paylaşabileceğiniz işaretleme dosyası, örneğin talimatlar ve özet
+README.md Markup file where you can share more information about the project, such as instructions and a summary.
 
-#### Şablonları Kaldırın
 
-- src/app içerisinde;
-  -layout.js ile
-  -page.js haricindekileri silebiliriz.
-
-#### next.config.json düzenlemesi
+#### next.config.json 
 
 const nextConfig = {
 reactStrictMode: true,
@@ -49,7 +32,7 @@ appDir:true
 }
 }
 
-#### İlk Bileşen
+#### First Component
 
 ```js
 function First() {
@@ -63,11 +46,9 @@ const First = () => {
 }
 ```
 
-- Büyük harfle başlar
-- JSX (html) döndürmelidir
-- Her zaman <First/> etiketini kapatmalıyız
 
-##### Tipik bir Bileşen
+
+##### a Component
 
 ```js
 const First = () => {
@@ -115,14 +96,8 @@ settings.json
   - react auto import
     - React Snippets › Settings: Import React On Top
 
-#### Ayrıntılı Olarak İlk Bileşen
-
-- büyük harf
-- bir şey return etmeli
-- JSX syntax(return html)
-  - hayatımızı kolaylaştırmak için
-
-#### JSX Kuralları
+#### Detailed first Component
+#### JSX 
 
 - tek öğe döndürür (bir ana öğe)
 
@@ -155,13 +130,13 @@ return (
 </div>
 ```
 
-- class yerine className
+- class to className
 
 ```js
 return <div className='container'>hello</div>
 ```
 
-- her elementi kapat
+- close every element
 
 ```js
 return <img />
@@ -170,7 +145,6 @@ return <input />
 ```
 
 - format
-  - return veya () ile aynı satırda açılış etiketi
 
 ```js
 function First() {
@@ -190,8 +164,7 @@ function First() {
   )
 }
 ```
-
-#### İç İçe Bileşenler
+###
 
 ```js
 function First() {
@@ -209,7 +182,7 @@ const Third = () => {
 }
 ```
 
-#### Yemek Sipariş Listesi
+#### Food Order List
 
 - setup
 
@@ -241,10 +214,9 @@ const Order = () => {
 const Store = () => <h4>Store</h4>
 ```
 
-- arama motoruna - 'yemek sepeti istanbul'
+ 'yemek sepeti istanbul'
   [yemeksepeti.com](https://www.yemeksepeti.com/city/istanbul)
-- yemeği seçin
-- resmini, ismini ve lokantayı kopyalayın
+
 
 ```js
 function FoodOrder() {
@@ -357,7 +329,7 @@ const Food = () => {
 
 #### JSX - CSS (inline styles)
 
-- JSX'te {}, JS'e geri dönmek anlamına gelir
+- JSX'te {}, 
 - değer, anahtar/değer çiftine sahip bir nesnedir ---büyük harfle ve '' " ile
 
 ```js
@@ -368,7 +340,7 @@ const Store = () => (
 )
 ```
 
-- css kuralları(inline vs external css)
+- css (inline vs external css)
 
 ```css
 .food h4 {
@@ -379,9 +351,7 @@ const Store = () => (
 }
 ```
 
-- harici kütüphaneler satır içi css kullanır,
-  yani bazı değişiklikler yapmak istiyorsanız,
-  kütüphane dokümanlarına ve elements sekmesine başvurmanız gerekir
+When using external libraries and wanting to make inline CSS changes, you typically need to refer to the library's documentation and use the "Elements" tab in your browser. Below is a general approach for making CSS changes to an element from an external library:
 
 - alternatif seçenek
 
@@ -395,9 +365,6 @@ const Store = () => {
   return <h4 style={inlineHeadingStyles}>Let's Salad </h4>
 }
 ```
-
-- FARKLI YAKLAŞIMLAR MEVCUT !!!
-- SONUÇ AYNI OLDUĞU SÜRECE İSTEDİĞİNİZİ TERCİH EDEBİLİRSİNİZ!!!!
 
 #### JSX - Javascript
 
